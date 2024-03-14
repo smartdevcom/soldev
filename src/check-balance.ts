@@ -1,4 +1,5 @@
 import { Connection, LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
+import { MAINNET_URL } from './constants';
 
 const publicKeyString = '6SkySq3QC1f2muxHWFEYd1AxfVTHzJLKV3qJoBwpdm2f';
 
@@ -16,7 +17,7 @@ if(isValidSolanaAddress(publicKeyString)) {
   const publicKey = new PublicKey(publicKeyString);
 
   // const connection = new Connection("https://api.devnet.solana.com", "confirmed");
-  const connection = new Connection("https://api.mainnet-beta.solana.com", "confirmed");
+  const connection = new Connection(MAINNET_URL, "confirmed");
   
   const balanceInLamports = await connection.getBalance(publicKey);
   
